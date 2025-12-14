@@ -1,4 +1,7 @@
+import 'dart:io';
+
 import 'package:dio/dio.dart';
+import 'package:flutter/widgets.dart';
 import 'package:news_app_demo/config/constants/constants.dart';
 import 'package:news_app_demo/config/util/data_state.dart';
 import 'package:news_app_demo/data/data_source/remote/news_api_service.dart';
@@ -15,8 +18,12 @@ class ArticleRepositoryImpl implements ArticleRepository {
       category: Constants.category,
       apiKey: Constants.apiKey,
     );
-    if (net.response.statusCode == 200) {
-      return DataSuccess(net.data);
+    if (net.response.statusCode == HttpStatus.ok) {
+      return DataSuccess(
+        net.data.articles
+            .map<ArticleModel>((e) => ArticleModel.fromJson(e))
+            .toList(),
+      );
     } else {
       return DataFailed(
         DioException(

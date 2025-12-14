@@ -6,7 +6,7 @@ part 'article_model.g.dart';
 @JsonSerializable()
 class ArticleModel extends ArticleEntity {
   const ArticleModel({
-    required super.source,
+    // required super.source,
     required super.author,
     required super.title,
     required super.description,
