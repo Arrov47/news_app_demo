@@ -1,7 +1,6 @@
 import 'dart:io';
 
 import 'package:dio/dio.dart';
-import 'package:flutter/widgets.dart';
 import 'package:news_app_demo/config/constants/constants.dart';
 import 'package:news_app_demo/config/util/data_state.dart';
 import 'package:news_app_demo/data/data_source/remote/news_api_service.dart';

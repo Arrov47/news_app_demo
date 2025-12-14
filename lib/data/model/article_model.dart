@@ -1,12 +1,12 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:news_app_demo/domain/entity/article_entity.dart';
- 
+
 part 'article_model.g.dart';
 
 @JsonSerializable()
 class ArticleModel extends ArticleEntity {
   const ArticleModel({
-    // required super.source,
+    required super.source,
     required super.author,
     required super.title,
     required super.description,
