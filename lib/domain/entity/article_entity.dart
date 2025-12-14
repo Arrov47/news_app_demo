@@ -2,15 +2,15 @@ import 'package:equatable/equatable.dart';
 
 class ArticleEntity extends Equatable {
   final Map<String, dynamic> source;
-  final String author;
+  final String? author;
   final String title;
-  final String description;
+  final String? description;
   final String url;
-  final String urlToImage;
+  final String? urlToImage;
   final String publishedAt;
-  final String content;
+  final String? content;
 
-  ArticleEntity({
+  const ArticleEntity({
     required this.source,
     required this.author,
     required this.title,

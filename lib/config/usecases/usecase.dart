@@ -1,3 +1,3 @@
-abstract class Usecase <R,P>{
-  Future<R> call(P p);
+abstract class UseCase<T, Params> {
+  Future<T> call(Params params);
 }

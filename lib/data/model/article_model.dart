@@ -1,7 +1,11 @@
+import 'package:json_annotation/json_annotation.dart';
 import 'package:news_app_demo/domain/entity/article_entity.dart';
+ 
+part 'article_model.g.dart';
 
+@JsonSerializable()
 class ArticleModel extends ArticleEntity {
-  ArticleModel({
+  const ArticleModel({
     required super.source,
     required super.author,
     required super.title,
@@ -12,16 +16,8 @@ class ArticleModel extends ArticleEntity {
     required super.content,
   });
 
-  factory ArticleModel.fromJson(Map<String, dynamic> json) {
-    return ArticleModel(
-      author: json['author'] ?? "",
-      source: json["author"] ?? {"": ""},
-      title: json['title'] ?? "",
-      description: json['description'] ?? "",
-      url: json['url'] ?? "",
-      urlToImage: json['urlToImage'] ?? "",
-      publishedAt: json['publishedAt'],
-      content: json['content'],
-    );
-  }
+  factory ArticleModel.fromJson(Map<String, dynamic> json) =>
+      _$ArticleModelFromJson(json);
+
+  Map<String, dynamic> toJson() => _$ArticleModelToJson(this);
 }
